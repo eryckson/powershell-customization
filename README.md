@@ -1,5 +1,10 @@
 # Customizando o PowerShell
 
+O PowerShell "de fábrica" (*out of the box*) não traz nenhum atalho, intelli-sense, autocompletar ou mesmo informações GIT no seu prompt.
+Além de não ser muito agradável aos olhos 😄. Mas há como dar uma turbinada no PowerShell tornando-o mais produtivo e palatável, para isso precisamos instalar alguns plugins, módulos e temas.
+
+Seguindo o passo a passo deste documento em alguns minutos você terá um PowerShell muito mais top e que vai te economizar tempo 😎.
+
 # Instalando as ferramentas
 
 ## Windows Terminal
