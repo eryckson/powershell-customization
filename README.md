@@ -23,7 +23,7 @@ O PowerShell é uma solução de automação de tarefas multiplataforma composta
 
 Um mecanismo de tema de prompt para qualquer shell.
 
-[Oh  My Posh](https://ohmyposh.dev/) é um plug-in gratuito que permite criar um tema e um tema para qualquer shell. Ele tornará seu prompt mais útil, como adicionar informações do Git ao prompt.
+[Oh  My Posh](https://ohmyposh.dev/) é um plug-in gratuito que permite criar um tema para qualquer shell. Ele tornará seu prompt mais útil, como adicionar informações do Git ao prompt.
 
 Instalar o Oh-My-Posh é muito fácil, execute o comando abaixo em um terminal como administrador do Powershell:
 
@@ -58,7 +58,7 @@ C:\tools\oh-my-posh\themes
 
 Oh My Posh foi projetado para usar [Nerd Fonts](https://www.nerdfonts.com/), que são fontes populares que são preparadas para incluir ícones. Oh My Posh recomenda a fonte *Meslo LGM NF*, mas qualquer Nerd Font deve ser compatível com os temas padrão.
 
-Escolha suas fontes [aqui](https://www.nerdfonts.com/font-downloads) ou direto no [GitHub](https://github.com/ryanoasis/nerd-fonts/releases) (nesse caso lembre-se de realizar o download dos assets da release mais atual).
+Escolha suas fontes [aqui](https://www.nerdfonts.com/font-downloads) ou direto no [GitHub](https://github.com/ryanoasis/nerd-fonts/releases) (nesse caso lembre-se de realizar o download dos *assets* da *release* mais atual).
 
 Após realizar o download, instale as fontes no Windows (*basicamente descompactar o arquivo, selecionar todas as fontes, botão direito e solicitar a instalação*).
 
@@ -87,6 +87,8 @@ Isso pode ser feito facilmente modificando as configurações do Windows Termina
 **VS Code**
 
 Ao usar o Visual Studio Code, você precisará configurar o Terminal integrado para fazer uso da Nerd Font também. 
+
+**Observação: em alguns casos a configuração abaixo é descenessária, então caso perceba que o terminal integrado não está legal experimente remover esta configuração.**
 
 Isso pode ser feito alterando o valor de `Integrated: Font Family` nas configurações do Terminal (atalho padrão: `CTRL + ,` e procure `Integrated: Font Family` ou via `Users -> Features -> Terminal`).
 
