@@ -131,8 +131,16 @@ Para dizer ao Powershell para iniciar o Oh My Posh, adicione esta linha ao seu p
 
 *Lembrando que `C:/tools/oh-my-posh/themes` deve ser o diretório onde você salvou os temas no passo 1, ou o link de algum tema online.*
 
+Local:
+
 ```powershell
-oh-my-posh --init --shell pwsh --config C:/tools/oh-my-posh/themes/1_shell.omp.json | Invoke-Expression
+oh-my-posh --init --shell pwsh --config "C:/tools/oh-my-posh/themes/1_shell.omp.json" | Invoke-Expression
+```
+
+Ou via link:
+
+```powershell
+oh-my-posh init pwsh --config "https://raw.githubusercontent.com/eryckson/powershell-customization/master/themes/fiduta.omp.json" | Invoke-Expression
 ```
 
 Ao fazer alterações neste arquivo, você precisará recarregar o terminal para que as alterações mais recentes sejam aplicadas. Você pode fazer isso recarregando o perfil usando este comando:
