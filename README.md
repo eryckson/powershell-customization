@@ -81,22 +81,43 @@ Isso pode ser feito facilmente modificando as configurações do Windows Termina
         }
     }
 }
-
 ```
+
+Exemplo com outra ótima Nerd Font, a `FiraCode`:
+
+```json
+{
+    "profiles":
+    {
+        "defaults":
+        {
+            "font":
+            {
+                "face": "FiraCode Nerd Font Mono Retina"
+            }
+        }
+    }
+}
+```
+
 
 **VS Code**
 
 Ao usar o Visual Studio Code, você precisará configurar o Terminal integrado para fazer uso da Nerd Font também. 
 
-**Observação: em alguns casos a configuração abaixo é descenessária, então caso perceba que o terminal integrado não está legal experimente remover esta configuração.**
+
 
 Isso pode ser feito alterando o valor de `Integrated: Font Family` nas configurações do Terminal (atalho padrão: `CTRL + ,` e procure `Integrated: Font Family` ou via `Users -> Features -> Terminal`).
 
 Se você estiver usando as configurações baseadas em JSON, precisará atualizar o valor `terminal.integrated.fontFamily`. Exemplo no caso de MesloLGM NF Nerd Font:
 
 ```json
-    "terminal.integrated.fontFamily": "MesloLGM NF"
+    MesloLGM Nerd Font Mono
 ```
+
+![vs code integrated terminal font](/assets/vs-code-font.png "vs code integrated terminal font")
+
+*Observação: em alguns casos esta configuração é descenessária. Então caso perceba que o terminal integrado não está legal experimente remover esta configuração.*
 
 ### 3. Iniciar o Oh My Posh no PowerShell
 
@@ -113,7 +134,7 @@ C:\Users\<user>\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
 
 Para dizer ao Powershell para iniciar o Oh My Posh, adicione esta linha ao seu perfil:
 
-*Lembrando que `C:/tools/oh-my-posh/themes` deve ser o diretório onde você salvou os temas no passo 1.*
+*Lembrando que `C:/tools/oh-my-posh/themes` deve ser o diretório onde você salvou os temas no passo 1, ou o link de algum tema online.*
 
 ```powershell
 oh-my-posh --init --shell pwsh --config C:/tools/oh-my-posh/themes/1_shell.omp.json | Invoke-Expression
