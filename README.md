@@ -182,7 +182,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 O [posh-git](http://dahlbyk.github.io/posh-git/) habilita no prompt os repositórios Git pode mostrar a branch atual e o estado dos arquivos (adições, modificações, exclusões).
 
 ```powershell
-Install-Module posh-git -Scope CurrentUser
+Install-Module posh-git
 ``` 
 
 **PSReadLine**
@@ -259,6 +259,7 @@ if ($host.Name -eq 'ConsoleHost' -or $host.Name -eq 'Visual Studio Code Host' ) 
 
 Import-Module -Name Terminal-Icons
 Import-Module z
+Import-Module posh-git
 ```
 
 ### Menções honrosas
