@@ -5,6 +5,20 @@ Além de não ser muito agradável aos olhos 😄. Mas há como dar uma turbinad
 
 Seguindo o passo a passo deste documento em alguns minutos você terá um PowerShell muito mais top e que vai te economizar tempo 😎.
 
+## Exemplos de customização
+
+### PowerShell com tema Fiduta
+
+![PowerShell Fiduta Theme](/assets/powershell-fiduta.png "PowerShell Fiduta Theme")
+
+### PowerShell com tema 1 Shell
+
+![PowerShell 1 Shell Theme](/assets/powershell-1shell.png "PowerShell 1 Shell Theme")
+
+### Terminal integado do VSCode com auto-complete e histórico
+
+![VS Code Integrated Terminal](/assets/vs-code-integrated.png "VS Code Integrated Terminal")
+
 # Instalando as ferramentas
 
 ## Windows Terminal
@@ -76,7 +90,7 @@ Isso pode ser feito facilmente modificando as configurações do Windows Termina
         {
             "font":
             {
-                "face": "MesloLGM Nerd Font Mono"
+                "face": "MesloLGM NF"
             }
         }
     }
@@ -108,7 +122,7 @@ Isso pode ser feito alterando o valor de `Integrated: Font Family` nas configura
 
 Se você estiver usando as configurações baseadas em JSON, precisará atualizar o valor `terminal.integrated.fontFamily`. 
 
-Exemplo no caso da *Meslo LGM NF* o valor da configuração deve ser "`MesloLGM Nerd Font Mono`":
+Exemplo no caso da *Meslo LGM NF* o valor da configuração deve ser "`MesloLGM NF`":
 
 ![vs code integrated terminal font](/assets/vs-code-font.png "vs code integrated terminal font")
 
@@ -134,13 +148,13 @@ Para dizer ao Powershell para iniciar o Oh My Posh, adicione esta linha ao seu p
 Local:
 
 ```powershell
-oh-my-posh --init --shell pwsh --config "C:/tools/oh-my-posh/themes/1_shell.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "C:/tools/oh-my-posh/themes/1_shell.omp.json" | Invoke-Expression
 ```
 
 Ou via link:
 
 ```powershell
-oh-my-posh --init --shell pwsh --config "https://raw.githubusercontent.com/eryckson/powershell-customization/master/themes/fiduta.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "https://raw.githubusercontent.com/eryckson/powershell-customization/master/themes/fiduta.omp.json" | Invoke-Expression
 ```
 
 Ao fazer alterações neste arquivo, você precisará recarregar o terminal para que as alterações mais recentes sejam aplicadas. Você pode fazer isso recarregando o perfil usando este comando:
