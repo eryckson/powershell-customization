@@ -164,6 +164,19 @@ Você pode instalar o módulo usando este comando:
 ```powershell
 Install-Module -Name Terminal-Icons -Repository PSGallery
 ```
+
+**Z**
+
+[z](https://github.com/badmotorfinger/z) permite que você navegue rapidamente pelo sistema de arquivos no PowerShell com base no histórico de comandos do `cd` por exemplo, estando na pasta `home` basta usar o comando `z powershell-customization` que *automagicamente* irei para o diretório deste repositório:
+
+![z sample](/assets/z-sample.png "z sample")
+
+Você pode instalar o módulo usando este comando:
+
+```powershell
+Install-Module -Name z
+```
+
 ### Meu arquivo $PROFILE
 
 Meu arquivo de perfil final se parece com isso:
@@ -171,22 +184,25 @@ Meu arquivo de perfil final se parece com isso:
 ```powershell
 oh-my-posh init pwsh --config 'C:/tools/oh-my-posh/themes/1_shell.omp.json' | Invoke-Expression
 
-if ($host.Name -eq 'ConsoleHost' -or $host.Name -eq 'Visual Studio Code Host' ) {
+# O thema abaixo é um tema que customizei, caso queiram experimentar basta substituir o tema
+# oh-my-posh init pwsh --config "https://raw.githubusercontent.com/eryckson/powershell-customization/master/themes/fiduta.omp.json" | Invoke-Expression
 
+if ($host.Name -eq 'ConsoleHost' -or $host.Name -eq 'Visual Studio Code Host' ) {
     Import-Module PSReadline
     Set-PSReadLineOption -EditMode Windows
     Set-PSReadLineOption -PredictionSource History
-  
+    Set-PSReadLineOption -PredictionViewStyle ListView
+
     Set-PSReadlineOption -Color @{
-      "Command"          = [ConsoleColor]::Green
-      "Parameter"        = [ConsoleColor]::Gray
-      "Operator"         = [ConsoleColor]::Magenta
-      "Variable"         = [ConsoleColor]::Yellow
-      "String"           = [ConsoleColor]::Yellow
-      "Number"           = [ConsoleColor]::Yellow
-      "Type"             = [ConsoleColor]::Cyan
-      "Comment"          = [ConsoleColor]::DarkCyan
-      "InlinePrediction" = '#70A99F'
+        "Command"          = [ConsoleColor]::Green
+        "Parameter"        = [ConsoleColor]::Gray
+        "Operator"         = [ConsoleColor]::Magenta
+        "Variable"         = [ConsoleColor]::Yellow
+        "String"           = [ConsoleColor]::Yellow
+        "Number"           = [ConsoleColor]::Yellow
+        "Type"             = [ConsoleColor]::Cyan
+        "Comment"          = [ConsoleColor]::DarkCyan
+        "InlinePrediction" = '#70A99F'
     }
   
     Set-PSReadLineKeyHandler -Function AcceptSuggestion -Key 'Ctrl+Spacebar'
@@ -194,17 +210,34 @@ if ($host.Name -eq 'ConsoleHost' -or $host.Name -eq 'Visual Studio Code Host' ) 
     Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward 
   
     Set-PSReadLineKeyHandler -Key Ctrl+Shift+b `
-                         -BriefDescription BuildCurrentDirectory `
-                         -LongDescription "Build the current directory" `
-                         -ScriptBlock {
-      [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
-      [Microsoft.PowerShell.PSConsoleReadLine]::Insert("dotnet build")
-      [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+        -BriefDescription BuildCurrentDirectory `
+        -LongDescription "Build the current directory" `
+        -ScriptBlock {
+        [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+        [Microsoft.PowerShell.PSConsoleReadLine]::Insert("dotnet build")
+        [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
     }
-  }
-  
-  Import-Module -Name Terminal-Icons
+}
+
+Import-Module -Name Terminal-Icons
+Import-Module z
 ```
+
+### Menções honrosas
+
+**Como limpar o histórico de comandos?**
+
+O histórico e dados sensíveis são exibidos novamente em sessões futuras, mesmo após usar o `Alt+F7` e `clear-history`.
+
+Isso acontece pois o histórico é armazenado em um arquivo de texto encontrado em:
+
+```powershell
+(Get-PSReadlineOption).HistorySavePath
+```
+
+Abrindo o arquivo (existe um para o PowerShell e outro para o Terminal integrado do VS Code) você pode excluir os comandos que não quer que estejam no histórico ou pode excluir o arquivo para limpar o histórico como um todo. 
+
+*É necessário fechar e abrir o PowerShell para que as alterações surtam efeito.*
 
 ## Referencias
 
