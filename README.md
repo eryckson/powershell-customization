@@ -76,7 +76,7 @@ Isso pode ser feito facilmente modificando as configurações do Windows Termina
         {
             "font":
             {
-                "face": "MesloLGM NF"
+                "face": "MesloLGM Nerd Font Mono"
             }
         }
     }
@@ -100,20 +100,15 @@ Exemplo com outra ótima Nerd Font, a `FiraCode`:
 }
 ```
 
-
 **VS Code**
 
 Ao usar o Visual Studio Code, você precisará configurar o Terminal integrado para fazer uso da Nerd Font também. 
 
-
-
 Isso pode ser feito alterando o valor de `Integrated: Font Family` nas configurações do Terminal (atalho padrão: `CTRL + ,` e procure `Integrated: Font Family` ou via `Users -> Features -> Terminal`).
 
-Se você estiver usando as configurações baseadas em JSON, precisará atualizar o valor `terminal.integrated.fontFamily`. Exemplo no caso de MesloLGM NF Nerd Font:
+Se você estiver usando as configurações baseadas em JSON, precisará atualizar o valor `terminal.integrated.fontFamily`. 
 
-```json
-    MesloLGM Nerd Font Mono
-```
+Exemplo no caso da *Meslo LGM NF* o valor da configuração deve ser "`MesloLGM Nerd Font Mono`":
 
 ![vs code integrated terminal font](/assets/vs-code-font.png "vs code integrated terminal font")
 
